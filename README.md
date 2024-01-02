@@ -27,7 +27,7 @@ hono.post('/upload', async (ctx) => {
             return;
           }
 
-          filePath = path.resolve('.', 'examples', 'node-fs', 'uploads', fileInfo.filename);
+          filePath = path.resolve('.', 'uploads', fileInfo.filename);
           if (existsSync(filePath)) {
             const err = new Error('FILE_ALREADY_EXISTS');
             rej(err);
