@@ -1,0 +1,14 @@
+examples
+.husky
+.vscode
+.vscode.tmpl
+.editorconfig
+.eslintignore
+.eslintrc.cjs
+.lintstagedrc
+.prettierrc
+commitlint.config.js
+.nvmrc
+tsconfig.json
+tsconfig.eslint.json
+tsup.config.ts

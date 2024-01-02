@@ -1,26 +1,20 @@
-# hono-upload
+import { createWriteStream, existsSync, rmSync } from 'fs';
+import path from 'path';
 
-A memory efficient upload handler for hono using streaming and [busboy](https://github.com/mscdex/busboy).
-
-## Installation
-
-```bash
-npm install hono-upload
-```
-
-## Example Usage
-
-```ts
+import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
-import { uploadHandler, uploadErrors } from 'hono-upload';
 
-hono.post('/upload', async (ctx) => {
+import { uploadErrors, uploadHandler } from '../../src';
+
+const app = new Hono();
+
+app.post('/upload', async (ctx) => {
+  let filePath: string | undefined;
   try {
     const result = await uploadHandler({
       ctx,
       maxFileSize: 5 * 1024 * 1024 * 1024, // 5GB
       onFile: (file, fileInfo) => {
-        // file is a Readable
         return new Promise<'ok'>((res, rej) => {
           if (fileInfo.mimeType === 'application/pdf') {
             rej(new Error('INVALID_MIME_TYPE'));
@@ -85,4 +79,8 @@ hono.post('/upload', async (ctx) => {
     return ctx.json({ message: 'UNKNOWN_ERROR' });
   }
 });
-```
+
+serve({
+  port: 3000,
+  fetch: app.fetch,
+});

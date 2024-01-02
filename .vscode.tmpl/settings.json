@@ -1,0 +1,19 @@
+{
+  "[typescript]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "eslint.workingDirectories": [
+    "packages/tiny-intl-core",
+    "packages/tiny-intl-react",
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+}
