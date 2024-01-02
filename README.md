@@ -2,11 +2,19 @@
 
 A memory efficient upload handler for hono using streaming and [busboy](https://github.com/mscdex/busboy).
 
+> [!WARNING]  
+> This is an early version of the package. Might have issues and breaking changes.
+
 ## Installation
 
 ```bash
 npm install hono-upload
 ```
+
+## Limitations
+
+- Currently only supports single file uploads
+- Currently only supports multipart/form-data requests
 
 ## Example Usage
 
