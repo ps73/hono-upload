@@ -111,8 +111,8 @@ export async function uploadHandler<T, C extends Context>({
         if (writeFile instanceof Promise) {
           writeFile
             .then((v) => {
-              busboy.emit('close');
               result = v;
+              busboy.emit('close');
             })
             .catch((err) => {
               reject(err);
