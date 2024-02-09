@@ -61,7 +61,7 @@ app.post('/upload', async (ctx) => {
       FILE_TOO_LARGE: 400,
       FILE_ALREADY_EXISTS: 409,
       INVALID_MIME_TYPE: 400,
-    };
+    } as const;
     const code = errorCodes[message];
     if (message === 'MAX_FILE_SIZE_EXCEEDED') {
       ctx.status(code);

@@ -9,6 +9,7 @@
     "moduleResolution": "Node16",
     "target": "ES2022",
     "strict": true,
+    "skipLibCheck": true
   },
   "include": ["src", "examples"],
   "exclude": ["node_modules", "dist"]
