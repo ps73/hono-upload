@@ -5,6 +5,11 @@ A memory efficient upload handler for hono using streaming and [busboy](https://
 > [!WARNING]  
 > This is an early version of the package. Might have issues and breaking changes.
 
+## Hono Version Compatibility
+
+If you use Hono v3, you should use `hono-upload@0.1.4`.
+For Hono v4, use `hono-upload@0.2.0` and above.
+
 ## Installation
 
 ```bash
